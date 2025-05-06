@@ -3,4 +3,22 @@ name = "agora"
 version = "0.1.0"
 edition = "2021"
 
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = "warn"
+perf = "warn"
+complexity = "warn"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "agora"
+
 [dependencies]
+actix-web = "4.10.2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[dev-dependencies]
+reqwest = "0.11"
